@@ -22,9 +22,9 @@ const ImpactSection = () => {
   ];
 
   const initiatives = [
-    { icon: '🏥', title: 'Rural Clinics Support', count: '500+', desc: 'Clinics equipped' },
-    { icon: '👩‍⚕️', title: 'Healthcare Training', count: '10K+', desc: 'Professionals trained' },
-    { icon: '💊', title: 'Medicine Donations', count: '2M+', desc: 'Doses donated' },
+    { icon: '🏥', title: 'Rural Clinics Support', count: '300+', desc: 'Clinics equipped' },
+    { icon: '👩‍⚕️', title: 'Healthcare Training', count: '5K+', desc: 'Professionals trained' },
+    { icon: '💊', title: 'Medicine Donations', count: '1M+', desc: 'Doses donated' },
     { icon: '🌍', title: 'Sustainability', count: '40%', desc: 'Carbon reduction' },
   ];
 
@@ -42,7 +42,7 @@ const ImpactSection = () => {
           <AnimatedSection animation="fadeUp" delay={0.1}>
             <h2 className="text-foreground mb-6">
               Creating Lasting Change
-              <span className="block text-primary">in African Healthcare</span>
+              <span className="block text-primary">in Nigerian Healthcare</span>
             </h2>
           </AnimatedSection>
 

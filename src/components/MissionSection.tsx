@@ -13,10 +13,10 @@ const MissionSection = () => {
   const imageX = useTransform(scrollYProgress, [0, 1], ['-10%', '10%']);
 
   const stats = [
-    { value: '15M+', label: 'Patients Reached' },
-    { value: '28', label: 'African Countries' },
+    { value: '8M+', label: 'Nigerians Reached' },
+    { value: '36', label: 'States + FCT' },
     { value: '150+', label: 'Medicines Portfolio' },
-    { value: '12K', label: 'Healthcare Partners' },
+    { value: '5K', label: 'Healthcare Partners' },
   ];
 
   return (
@@ -37,7 +37,7 @@ const MissionSection = () => {
             <AnimatedSection animation="fadeUp" delay={0.1}>
               <h2 className="text-foreground mb-8 text-balance">
                 Reimagining Healthcare
-                <span className="block text-primary">for Africa's Future</span>
+                <span className="block text-primary">for Nigeria's Future</span>
               </h2>
             </AnimatedSection>
 
@@ -45,16 +45,16 @@ const MissionSection = () => {
               <p className="text-lg text-muted-foreground leading-relaxed mb-8">
                 At Laylife Pharmaceutical, we believe quality healthcare is a fundamental right, 
                 not a privilege. Our mission is to bridge the gap between global pharmaceutical 
-                innovation and African communities, ensuring access to life-saving medicines 
-                at every corner of the continent.
+                innovation and Nigerian communities, ensuring access to life-saving medicines 
+                in every state and local government area.
               </p>
             </AnimatedSection>
 
             <AnimatedSection animation="fadeUp" delay={0.3}>
               <p className="text-lg text-muted-foreground leading-relaxed mb-10">
-                From our headquarters in Abuja, Nigeria, we've built a network spanning 28 
-                countries, working alongside healthcare professionals to deliver the treatments 
-                that transform lives.
+                From our headquarters in Abuja, we've built a distribution network spanning all 
+                36 states and the FCT, working alongside healthcare professionals to deliver the 
+                treatments that transform lives.
               </p>
             </AnimatedSection>
 

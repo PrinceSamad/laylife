@@ -1,25 +1,29 @@
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import AnimatedSection, { StaggerContainer, StaggerItem } from './AnimatedSection';
 import { ArrowRight } from 'lucide-react';
 
 const NewsSection = () => {
   const news = [
     {
+      slug: 'who-vaccine-distribution',
       date: 'January 28, 2026',
       category: 'Partnership',
-      title: 'Laylife Partners with WHO for Continental Vaccine Distribution',
-      excerpt: 'A landmark agreement to expand vaccine access across 15 additional African nations.',
+      title: 'Laylife Partners with WHO for Nationwide Vaccine Distribution',
+      excerpt: 'A landmark agreement to expand vaccine access across all 36 Nigerian states.',
     },
     {
+      slug: 'malaria-treatment-breakthrough',
       date: 'January 15, 2026',
       category: 'Research',
       title: 'Breakthrough in Malaria Treatment Shows 94% Efficacy',
       excerpt: 'Clinical trials reveal promising results for our new antimalarial compound.',
     },
     {
+      slug: 'pharmaceutical-excellence-award',
       date: 'January 8, 2026',
       category: 'Awards',
-      title: 'Laylife Receives African Pharmaceutical Excellence Award',
+      title: 'Laylife Receives Nigerian Pharmaceutical Excellence Award',
       excerpt: 'Recognition for our commitment to quality manufacturing and patient access.',
     },
   ];
@@ -63,7 +67,7 @@ const NewsSection = () => {
                 className="group h-full"
                 whileHover={{ y: -8 }}
               >
-                <a href="#" className="block h-full">
+                <Link to={`/news/${item.slug}`} className="block h-full">
                   {/* Date & Category */}
                   <div className="flex items-center gap-4 mb-4">
                     <span className="text-sm text-muted-foreground">{item.date}</span>
@@ -99,7 +103,7 @@ const NewsSection = () => {
                       style={{ transformOrigin: 'left' }}
                     />
                   </div>
-                </a>
+                </Link>
               </motion.article>
             </StaggerItem>
           ))}
