@@ -1,7 +1,9 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { useHeaderScroll } from '@/hooks/useScrollAnimation';
-import { Menu, X, Search, Globe, ChevronDown } from 'lucide-react';
+import { Menu, X, Search, Globe, ChevronDown, Phone } from 'lucide-react';
+import Logo from './Logo';
 
 const Header = () => {
   const { isScrolled } = useHeaderScroll();
@@ -14,6 +16,7 @@ const Header = () => {
     { label: 'Research', href: '#research', hasDropdown: false },
     { label: 'Impact', href: '#impact', hasDropdown: true },
     { label: 'Careers', href: '#careers', hasDropdown: false },
+    { label: 'Contact', href: '#contact', hasDropdown: false },
   ];
 
   return (
@@ -29,24 +32,13 @@ const Header = () => {
         <div className="container mx-auto px-6 lg:px-12">
           <div className="flex items-center justify-between h-20 lg:h-24">
             {/* Logo */}
-            <motion.a
-              href="#"
-              className="relative z-10 flex items-center gap-3"
-              whileHover={{ scale: 1.02 }}
-              transition={{ duration: 0.3 }}
-            >
-              <div className={`flex items-center gap-3 ${isScrolled ? 'text-primary' : 'text-primary-foreground'}`}>
-                <div className="relative">
-                  <div className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center">
-                    <span className="text-primary-foreground font-bold text-lg">L</span>
-                  </div>
-                </div>
-                <div className="hidden sm:block">
-                  <span className="font-semibold text-xl tracking-tight">Laylife</span>
-                  <span className="hidden lg:inline text-sm ml-1 opacity-80">Pharmaceutical</span>
-                </div>
-              </div>
-            </motion.a>
+            <Link to="/" className="relative z-10">
+              <Logo 
+                variant={isScrolled ? 'dark' : 'light'} 
+                size="md"
+                showText={true}
+              />
+            </Link>
 
             {/* Desktop Navigation */}
             <nav className="hidden lg:flex items-center gap-8">
@@ -103,21 +95,27 @@ const Header = () => {
 
             {/* Right Actions */}
             <div className="flex items-center gap-4">
+              {/* Phone CTA - Desktop */}
+              <motion.a
+                href="tel:+2348060350368"
+                className={`hidden lg:flex items-center gap-2 px-4 py-2 rounded-full transition-colors ${
+                  isScrolled 
+                    ? 'bg-secondary/10 text-secondary hover:bg-secondary hover:text-secondary-foreground' 
+                    : 'bg-white/10 text-primary-foreground hover:bg-white/20'
+                }`}
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                <Phone className="w-4 h-4" />
+                <span className="text-sm font-medium">+234 806 035 0368</span>
+              </motion.a>
+
               <button
                 className={`p-2 rounded-full transition-colors ${
                   isScrolled ? 'hover:bg-muted text-foreground' : 'hover:bg-white/10 text-primary-foreground'
                 }`}
               >
                 <Search className="w-5 h-5" />
-              </button>
-              
-              <button
-                className={`hidden lg:flex items-center gap-2 p-2 rounded-full transition-colors ${
-                  isScrolled ? 'hover:bg-muted text-foreground' : 'hover:bg-white/10 text-primary-foreground'
-                }`}
-              >
-                <Globe className="w-5 h-5" />
-                <span className="text-sm">EN</span>
               </button>
 
               {/* Mobile Menu Button */}
@@ -166,6 +164,18 @@ const Header = () => {
                   </motion.a>
                 ))}
               </div>
+
+              {/* Mobile Phone CTA */}
+              <motion.a
+                href="tel:+2348060350368"
+                className="flex items-center justify-center gap-2 mt-8 py-4 bg-secondary text-secondary-foreground rounded-lg font-medium"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.5 }}
+              >
+                <Phone className="w-5 h-5" />
+                <span>+234 806 035 0368</span>
+              </motion.a>
             </motion.nav>
           </motion.div>
         )}

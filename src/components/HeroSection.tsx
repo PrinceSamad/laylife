@@ -2,6 +2,7 @@ import { useRef, useEffect, useState } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { ArrowRight, ChevronDown } from 'lucide-react';
 import heroImage from '@/assets/hero-medical.jpg';
+import Logo from './Logo';
 
 const HeroSection = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -31,7 +32,7 @@ const HeroSection = () => {
     return () => window.removeEventListener('mousemove', handleMouseMove);
   }, []);
 
-  const headlineWords = ['Transforming', 'Healthcare', 'Across Africa'];
+  const headlineWords = ['Transforming', 'Healthcare', 'Across Nigeria'];
 
   return (
     <section
@@ -70,6 +71,16 @@ const HeroSection = () => {
       >
         <div className="container mx-auto px-6 lg:px-12">
           <div className="max-w-3xl">
+            {/* Hero Logo */}
+            <motion.div
+              className="mb-8"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.1 }}
+            >
+              <Logo variant="light" size="xl" showText={true} />
+            </motion.div>
+
             {/* Animated Headline */}
             <div className="overflow-hidden mb-6">
               {headlineWords.map((word, i) => (
@@ -96,8 +107,8 @@ const HeroSection = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.9, ease: [0.16, 1, 0.3, 1] }}
             >
-              Pioneering pharmaceutical excellence to deliver life-changing medicines 
-              to communities that need them most.
+              Pioneering pharmaceutical excellence from Abuja to deliver life-changing medicines 
+              to every Nigerian community that needs them most.
             </motion.p>
 
             {/* Animated Line */}

@@ -1,6 +1,8 @@
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import AnimatedSection, { StaggerContainer, StaggerItem } from './AnimatedSection';
 import { ArrowRight, MapPin, Phone, Mail, Linkedin, Twitter, Facebook, Youtube } from 'lucide-react';
+import Logo from './Logo';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -45,7 +47,7 @@ const Footer = () => {
                   Partner with Us
                 </h2>
                 <p className="text-primary-foreground/80 max-w-xl">
-                  Join our mission to transform healthcare across Africa. 
+                  Join our mission to transform healthcare across Nigeria. 
                   We're always looking for healthcare partners, distributors, and innovators.
                 </p>
               </div>
@@ -71,21 +73,15 @@ const Footer = () => {
           <div className="lg:col-span-4">
             <AnimatedSection animation="fadeUp">
               <div className="mb-8">
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="w-12 h-12 rounded-full bg-secondary flex items-center justify-center">
-                    <span className="text-primary-foreground font-bold text-xl">L</span>
-                  </div>
-                  <div>
-                    <span className="font-semibold text-xl">Laylife</span>
-                    <span className="block text-sm text-primary-foreground/70">Pharmaceutical Limited</span>
-                  </div>
-                </div>
+                <Link to="/" className="inline-block mb-6">
+                  <Logo variant="light" size="lg" showText={true} />
+                </Link>
                 
                 <p className="text-primary-foreground/80 text-sm leading-relaxed mb-6">
-                  Pioneering pharmaceutical excellence across Africa, 
+                  Nigeria's trusted pharmaceutical partner, 
                   delivering life-changing medicines to those who need them most.
                 </p>
-
+                
                 {/* Contact Info */}
                 <div className="space-y-3 text-sm">
                   <div className="flex items-start gap-3">
@@ -96,11 +92,15 @@ const Footer = () => {
                   </div>
                   <div className="flex items-center gap-3">
                     <Phone className="w-5 h-5 text-secondary flex-shrink-0" />
-                    <span className="text-primary-foreground/80">+234 (0) 123 456 7890</span>
+                    <a href="tel:+2348060350368" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">
+                      +234 806 035 0368
+                    </a>
                   </div>
                   <div className="flex items-center gap-3">
                     <Mail className="w-5 h-5 text-secondary flex-shrink-0" />
-                    <span className="text-primary-foreground/80">info@laylifepharma.com</span>
+                    <a href="mailto:info@laylifepharma.com" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">
+                      info@laylifepharma.com
+                    </a>
                   </div>
                 </div>
               </div>

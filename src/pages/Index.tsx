@@ -7,6 +7,7 @@ import ParallaxBanner from '@/components/ParallaxBanner';
 import ImpactSection from '@/components/ImpactSection';
 import NewsSection from '@/components/NewsSection';
 import CareersSection from '@/components/CareersSection';
+import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
 
 const Index = () => {
@@ -41,6 +42,9 @@ const Index = () => {
       
       {/* Careers Section */}
       <CareersSection />
+
+      {/* Contact Section */}
+      <ContactSection />
       
       {/* Footer */}
       <Footer />
