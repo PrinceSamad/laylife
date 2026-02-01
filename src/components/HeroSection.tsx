@@ -71,15 +71,6 @@ const HeroSection = () => {
       >
         <div className="container mx-auto px-6 lg:px-12">
           <div className="max-w-3xl">
-            {/* Hero Logo */}
-            <motion.div
-              className="mb-8"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.1 }}
-            >
-              <Logo variant="light" size="xl" showText={true} />
-            </motion.div>
 
             {/* Animated Headline */}
             <div className="overflow-hidden mb-6">

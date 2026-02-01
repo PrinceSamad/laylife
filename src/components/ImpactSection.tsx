@@ -25,7 +25,7 @@ const ImpactSection = () => {
     { icon: '🏥', title: 'Rural Clinics Support', count: '300+', desc: 'Clinics equipped' },
     { icon: '👩‍⚕️', title: 'Healthcare Training', count: '5K+', desc: 'Professionals trained' },
     { icon: '💊', title: 'Medicine Donations', count: '1M+', desc: 'Doses donated' },
-    { icon: '🌍', title: 'Sustainability', count: '40%', desc: 'Carbon reduction' },
+    { icon: '🇳🇬', title: 'Nigerian States', count: '36+', desc: 'States covered' },
   ];
 
   return (

@@ -109,11 +109,11 @@ const MissionSection = () => {
                 >
                   <div className="flex items-center gap-4">
                     <div className="w-12 h-12 bg-secondary/10 rounded-full flex items-center justify-center">
-                      <span className="text-secondary text-xl">★</span>
+                      <span className="text-secondary text-xl">🇳🇬</span>
                     </div>
                     <div>
-                      <span className="block font-semibold text-foreground">Excellence Award</span>
-                      <span className="text-sm text-muted-foreground">African Healthcare 2024</span>
+                      <span className="block font-semibold text-foreground">Proudly Nigerian</span>
+                      <span className="text-sm text-muted-foreground">Serving All 36 States + FCT</span>
                     </div>
                   </div>
                 </motion.div>

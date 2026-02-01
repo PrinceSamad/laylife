@@ -11,12 +11,12 @@ const Header = () => {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
 
   const navItems = [
-    { label: 'About Us', href: '#about', hasDropdown: true },
-    { label: 'Our Medicines', href: '#medicines', hasDropdown: true },
-    { label: 'Research', href: '#research', hasDropdown: false },
-    { label: 'Impact', href: '#impact', hasDropdown: true },
-    { label: 'Careers', href: '#careers', hasDropdown: false },
-    { label: 'Contact', href: '#contact', hasDropdown: false },
+    { label: 'About Us', href: '#about', hasDropdown: false, isRoute: false },
+    { label: 'Our Medicines', href: '/medicines', hasDropdown: false, isRoute: true },
+    { label: 'Leadership', href: '/leadership', hasDropdown: false, isRoute: true },
+    { label: 'News', href: '#research', hasDropdown: false, isRoute: false },
+    { label: 'Careers', href: '#careers', hasDropdown: false, isRoute: false },
+    { label: 'Contact', href: '#contact', hasDropdown: false, isRoute: false },
   ];
 
   return (
@@ -49,19 +49,30 @@ const Header = () => {
                   onMouseEnter={() => item.hasDropdown && setActiveDropdown(item.label)}
                   onMouseLeave={() => setActiveDropdown(null)}
                 >
-                  <a
-                    href={item.href}
-                    className={`nav-link flex items-center gap-1 text-sm font-medium transition-colors ${
-                      isScrolled ? 'text-foreground' : 'text-primary-foreground'
-                    }`}
-                  >
-                    {item.label}
-                    {item.hasDropdown && (
-                      <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${
-                        activeDropdown === item.label ? 'rotate-180' : ''
-                      }`} />
-                    )}
-                  </a>
+                  {item.isRoute ? (
+                    <Link
+                      to={item.href}
+                      className={`nav-link flex items-center gap-1 text-sm font-medium transition-colors ${
+                        isScrolled ? 'text-foreground' : 'text-primary-foreground'
+                      }`}
+                    >
+                      {item.label}
+                    </Link>
+                  ) : (
+                    <a
+                      href={item.href}
+                      className={`nav-link flex items-center gap-1 text-sm font-medium transition-colors ${
+                        isScrolled ? 'text-foreground' : 'text-primary-foreground'
+                      }`}
+                    >
+                      {item.label}
+                      {item.hasDropdown && (
+                        <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${
+                          activeDropdown === item.label ? 'rotate-180' : ''
+                        }`} />
+                      )}
+                    </a>
+                  )}
                   
                   {/* Dropdown */}
                   <AnimatePresence>
@@ -151,17 +162,34 @@ const Header = () => {
             >
               <div className="space-y-1">
                 {navItems.map((item, i) => (
-                  <motion.a
-                    key={item.label}
-                    href={item.href}
-                    className="block py-4 text-2xl font-light border-b border-border"
-                    initial={{ opacity: 0, x: 40 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: i * 0.1 }}
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    {item.label}
-                  </motion.a>
+                  item.isRoute ? (
+                    <motion.div
+                      key={item.label}
+                      initial={{ opacity: 0, x: 40 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: i * 0.1 }}
+                    >
+                      <Link
+                        to={item.href}
+                        className="block py-4 text-2xl font-light border-b border-border"
+                        onClick={() => setIsMobileMenuOpen(false)}
+                      >
+                        {item.label}
+                      </Link>
+                    </motion.div>
+                  ) : (
+                    <motion.a
+                      key={item.label}
+                      href={item.href}
+                      className="block py-4 text-2xl font-light border-b border-border"
+                      initial={{ opacity: 0, x: 40 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: i * 0.1 }}
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      {item.label}
+                    </motion.a>
+                  )
                 ))}
               </div>
 
