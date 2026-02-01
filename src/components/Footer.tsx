@@ -10,21 +10,21 @@ const Footer = () => {
   const footerLinks = {
     company: [
       { label: 'About Us', href: '#about' },
-      { label: 'Leadership', href: '#' },
+      { label: 'Leadership', href: '/leadership' },
       { label: 'Careers', href: '#careers' },
-      { label: 'News', href: '#' },
+      { label: 'News', href: '#research' },
     ],
     products: [
-      { label: 'Our Medicines', href: '#medicines' },
-      { label: 'Therapeutic Areas', href: '#' },
+      { label: 'Our Medicines', href: '/medicines' },
+      { label: 'Therapeutic Areas', href: '/medicines' },
       { label: 'Research', href: '#research' },
-      { label: 'Clinical Trials', href: '#' },
+      { label: 'Quality Assurance', href: '#about' },
     ],
     resources: [
-      { label: 'Patient Support', href: '#' },
-      { label: 'Healthcare Professionals', href: '#' },
-      { label: 'Investors', href: '#' },
-      { label: 'Media Center', href: '#' },
+      { label: 'Patient Support', href: '#contact' },
+      { label: 'Healthcare Professionals', href: '#contact' },
+      { label: 'Partner With Us', href: '#contact' },
+      { label: 'Media Center', href: '#research' },
     ],
   };
 

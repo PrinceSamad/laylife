@@ -5,6 +5,7 @@ import MissionSection from '@/components/MissionSection';
 import ServicesSection from '@/components/ServicesSection';
 import ParallaxBanner from '@/components/ParallaxBanner';
 import ImpactSection from '@/components/ImpactSection';
+import TestimonialsSection from '@/components/TestimonialsSection';
 import NewsSection from '@/components/NewsSection';
 import CareersSection from '@/components/CareersSection';
 import ContactSection from '@/components/ContactSection';
@@ -36,6 +37,9 @@ const Index = () => {
       
       {/* Impact Section */}
       <ImpactSection />
+
+      {/* Testimonials Section */}
+      <TestimonialsSection />
       
       {/* News & Insights */}
       <NewsSection />

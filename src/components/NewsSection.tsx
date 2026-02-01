@@ -20,11 +20,11 @@ const NewsSection = () => {
       excerpt: 'Clinical trials reveal promising results for our new antimalarial compound.',
     },
     {
-      slug: 'pharmaceutical-excellence-award',
+      slug: 'nafdac-partnership',
       date: 'January 8, 2026',
-      category: 'Awards',
-      title: 'Laylife Receives Nigerian Pharmaceutical Excellence Award',
-      excerpt: 'Recognition for our commitment to quality manufacturing and patient access.',
+      category: 'Regulatory',
+      title: 'Laylife Strengthens Partnership with NAFDAC',
+      excerpt: 'Enhanced collaboration to ensure highest pharmaceutical standards across Nigeria.',
     },
   ];
 

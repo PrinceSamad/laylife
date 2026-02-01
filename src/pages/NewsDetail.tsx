@@ -69,33 +69,36 @@ const newsArticles = {
     `,
     relatedArticles: ['who-vaccine-distribution', 'pharmaceutical-excellence-award'],
   },
-  'pharmaceutical-excellence-award': {
+  'nafdac-partnership': {
     date: 'January 8, 2026',
-    category: 'Awards',
-    title: 'Laylife Receives Nigerian Pharmaceutical Excellence Award',
-    excerpt: 'Recognition for our commitment to quality manufacturing and patient access.',
+    category: 'Regulatory',
+    title: 'Laylife Strengthens Partnership with NAFDAC',
+    excerpt: 'Enhanced collaboration to ensure highest pharmaceutical standards across Nigeria.',
     image: manufacturing,
     author: 'Editorial Team',
     readTime: '4 min read',
     content: `
-      <p class="lead">At the prestigious Nigerian Pharmaceutical Industry Awards ceremony held in Lagos, Laylife Pharmaceutical Limited was honored with the Excellence in Pharmaceutical Manufacturing award, recognizing the company's unwavering commitment to quality and innovation.</p>
+      <p class="lead">Laylife Pharmaceutical Limited has reinforced its commitment to pharmaceutical excellence through an enhanced partnership with the National Agency for Food and Drug Administration and Control (NAFDAC).</p>
       
-      <h3>A Testament to Quality</h3>
-      <p>The award acknowledges Laylife's state-of-the-art manufacturing facility in Abuja, which achieved WHO prequalification status last year. The facility produces over 50 essential medicines, serving millions of Nigerians annually.</p>
+      <h3>A Commitment to Quality</h3>
+      <p>This partnership focuses on ensuring all Laylife products meet and exceed NAFDAC's stringent quality standards. Our state-of-the-art manufacturing facility in Abuja has been certified compliant with WHO Good Manufacturing Practice (GMP) guidelines.</p>
       
-      <h3>Beyond Manufacturing</h3>
-      <p>The judging panel specifically noted Laylife's holistic approach to healthcare, including:</p>
+      <h3>Key Areas of Collaboration</h3>
       <ul>
-        <li>Patient assistance programs that have helped over 100,000 low-income Nigerians access essential medicines</li>
-        <li>Investment in local talent through the Laylife Pharmaceutical Scholarship program</li>
-        <li>Environmental sustainability initiatives that have reduced carbon emissions by 35%</li>
-        <li>Community health education programs reaching 500,000 people annually</li>
+        <li>Enhanced quality control protocols across all manufacturing processes</li>
+        <li>Regular facility inspections and compliance audits</li>
+        <li>Joint training programs for pharmaceutical professionals</li>
+        <li>Collaborative efforts to combat counterfeit medicines in Nigeria</li>
+        <li>Public awareness campaigns on medication safety</li>
       </ul>
       
-      <blockquote>"This award belongs to every member of the Laylife family — from our scientists and manufacturing teams to our distribution partners across Nigeria." — Dr. Chidi Emenike, CEO</blockquote>
+      <h3>Protecting Nigerian Patients</h3>
+      <p>A crucial aspect of this partnership involves combating the proliferation of counterfeit and substandard medicines in the Nigerian market. Laylife has implemented advanced authentication technologies across its product range.</p>
       
-      <h3>Commitment to the Future</h3>
-      <p>Laylife has announced plans to expand its manufacturing capacity by 60% over the next three years, with a focus on producing generic versions of essential medicines currently imported into Nigeria.</p>
+      <blockquote>"Every Nigerian deserves access to genuine, safe, and effective medicines. This partnership with NAFDAC ensures we maintain the highest standards of pharmaceutical practice." — Dr. Adams Muhammed Bedemasi, CEO</blockquote>
+      
+      <h3>Looking Forward</h3>
+      <p>Laylife remains committed to working closely with regulatory bodies to elevate pharmaceutical standards across Nigeria. Our investment in quality assurance represents our unwavering dedication to patient safety and healthcare excellence.</p>
     `,
     relatedArticles: ['who-vaccine-distribution', 'malaria-treatment-breakthrough'],
   },
