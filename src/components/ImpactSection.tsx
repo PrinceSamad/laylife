@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import AnimatedSection, { StaggerContainer, StaggerItem } from './AnimatedSection';
 import patientCareImage from '@/assets/patient-care.jpg';
 import medicinesImage from '@/assets/medicines.jpg';
@@ -10,14 +11,14 @@ const ImpactSection = () => {
       title: 'Reaching Underserved Communities',
       description: 'Our mobile health initiatives bring essential medicines to remote areas, ensuring no one is left behind in healthcare access.',
       image: patientCareImage,
-      link: '#',
+      slug: 'community-health',
     },
     {
       category: 'Affordable Medicine',
       title: 'Making Treatment Accessible',
       description: 'Through innovative pricing models and partnerships, we\'ve reduced medication costs by up to 60% for patients in need.',
       image: medicinesImage,
-      link: '#',
+      slug: 'affordable-medicine',
     },
   ];
 
@@ -94,16 +95,17 @@ const ImpactSection = () => {
                     {impact.description}
                   </p>
                   
-                  <motion.a
-                    href={impact.link}
-                    className="inline-flex items-center gap-2 text-secondary font-medium"
-                    whileHover={{ x: 4 }}
-                  >
-                    <span className="animated-underline">Read the story</span>
-                    <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                      <path d="M5 12h14M12 5l7 7-7 7" />
-                    </svg>
-                  </motion.a>
+                  <Link to={`/story/${impact.slug}`}>
+                    <motion.span
+                      className="inline-flex items-center gap-2 text-secondary font-medium cursor-pointer"
+                      whileHover={{ x: 4 }}
+                    >
+                      <span className="animated-underline">Read the story</span>
+                      <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                        <path d="M5 12h14M12 5l7 7-7 7" />
+                      </svg>
+                    </motion.span>
+                  </Link>
                 </div>
               </motion.article>
             </AnimatedSection>
