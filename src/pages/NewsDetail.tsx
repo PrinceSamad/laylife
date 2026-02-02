@@ -10,6 +10,30 @@ import labResearch from '@/assets/lab-research.jpg';
 import patientCare from '@/assets/patient-care.jpg';
 import manufacturing from '@/assets/manufacturing.jpg';
 
+/**
+ * SECURITY NOTE: Article Content Rendering
+ * 
+ * The newsArticles object below contains STATIC, DEVELOPER-CONTROLLED HTML content.
+ * This content is rendered using dangerouslySetInnerHTML which is safe ONLY because:
+ * 
+ * 1. All content is hardcoded in this file - no user input or external data
+ * 2. No database queries or CMS integration
+ * 3. All HTML is reviewed and controlled by the development team
+ * 
+ * ⚠️ XSS WARNING: If this content source changes in the future to:
+ * - User-generated content
+ * - External CMS/API data
+ * - Database-stored content
+ * 
+ * You MUST implement proper sanitization using DOMPurify or similar:
+ * ```
+ * import DOMPurify from 'dompurify';
+ * const sanitizedContent = DOMPurify.sanitize(article.content);
+ * ```
+ * 
+ * Additionally, consider implementing Content Security Policy (CSP) headers
+ * as an additional layer of protection against XSS attacks.
+ */
 const newsArticles = {
   'who-vaccine-distribution': {
     date: 'January 28, 2026',
