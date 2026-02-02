@@ -1,26 +1,94 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
+import { z } from 'zod';
 import AnimatedSection, { StaggerContainer, StaggerItem } from './AnimatedSection';
-import { MapPin, Phone, Mail, Clock, Send, CheckCircle } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, Send, CheckCircle, AlertCircle } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 
+// Validation schema with strict input constraints
+const contactFormSchema = z.object({
+  name: z.string()
+    .trim()
+    .min(1, { message: "Name is required" })
+    .max(100, { message: "Name must be less than 100 characters" })
+    .regex(/^[a-zA-Z\s\-'.]+$/, { message: "Name contains invalid characters" }),
+  email: z.string()
+    .trim()
+    .min(1, { message: "Email is required" })
+    .email({ message: "Please enter a valid email address" })
+    .max(255, { message: "Email must be less than 255 characters" }),
+  company: z.string()
+    .trim()
+    .max(150, { message: "Company name must be less than 150 characters" })
+    .optional()
+    .or(z.literal('')),
+  subject: z.string()
+    .trim()
+    .min(1, { message: "Subject is required" })
+    .max(200, { message: "Subject must be less than 200 characters" }),
+  message: z.string()
+    .trim()
+    .min(10, { message: "Message must be at least 10 characters" })
+    .max(2000, { message: "Message must be less than 2000 characters" }),
+});
+
+type ContactFormData = z.infer<typeof contactFormSchema>;
+type FormErrors = Partial<Record<keyof ContactFormData, string>>;
+
 const ContactSection = () => {
-  const [formState, setFormState] = useState({
+  const [formState, setFormState] = useState<ContactFormData>({
     name: '',
     email: '',
     company: '',
     subject: '',
     message: '',
   });
+  const [errors, setErrors] = useState<FormErrors>({});
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
+  const validateForm = (): boolean => {
+    const result = contactFormSchema.safeParse(formState);
+    
+    if (!result.success) {
+      const fieldErrors: FormErrors = {};
+      result.error.errors.forEach((error) => {
+        const field = error.path[0] as keyof ContactFormData;
+        if (!fieldErrors[field]) {
+          fieldErrors[field] = error.message;
+        }
+      });
+      setErrors(fieldErrors);
+      return false;
+    }
+    
+    setErrors({});
+    return true;
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Validate form data
+    if (!validateForm()) {
+      return;
+    }
+    
     setIsSubmitting(true);
     
-    // Simulate form submission
+    // Parse and sanitize the validated data
+    const validatedData = contactFormSchema.parse(formState);
+    
+    // TODO: Replace with actual backend API call
+    // When implementing backend:
+    // 1. Send validatedData to a server-side endpoint or edge function
+    // 2. Implement rate limiting on the server
+    // 3. Add CAPTCHA verification
+    // 4. Sanitize and validate again on server-side
+    // 5. Never trust client-side validation alone
+    
+    // Simulate form submission (replace with actual API call)
     await new Promise(resolve => setTimeout(resolve, 1500));
     
     setIsSubmitting(false);
@@ -30,11 +98,18 @@ const ContactSection = () => {
     setTimeout(() => {
       setIsSubmitted(false);
       setFormState({ name: '', email: '', company: '', subject: '', message: '' });
+      setErrors({});
     }, 5000);
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormState(prev => ({ ...prev, [e.target.name]: e.target.value }));
+    const { name, value } = e.target;
+    setFormState(prev => ({ ...prev, [name]: value }));
+    
+    // Clear error when user starts typing
+    if (errors[name as keyof ContactFormData]) {
+      setErrors(prev => ({ ...prev, [name]: undefined }));
+    }
   };
 
   const contactInfo = [
@@ -169,7 +244,7 @@ const ContactSection = () => {
                       <p className="text-muted-foreground">Fill out the form below and we'll respond promptly.</p>
                     </div>
 
-                    <form onSubmit={handleSubmit} className="space-y-6">
+                    <form onSubmit={handleSubmit} className="space-y-6" noValidate>
                       <div className="grid sm:grid-cols-2 gap-6">
                         <div className="space-y-2">
                           <label htmlFor="name" className="text-sm font-medium text-foreground">
@@ -181,9 +256,17 @@ const ContactSection = () => {
                             value={formState.name}
                             onChange={handleChange}
                             placeholder="Your name"
-                            required
-                            className="bg-muted/50 border-border focus:border-secondary"
+                            maxLength={100}
+                            className={`bg-muted/50 border-border focus:border-secondary ${errors.name ? 'border-destructive' : ''}`}
+                            aria-invalid={!!errors.name}
+                            aria-describedby={errors.name ? 'name-error' : undefined}
                           />
+                          {errors.name && (
+                            <p id="name-error" className="text-sm text-destructive flex items-center gap-1">
+                              <AlertCircle className="w-3 h-3" />
+                              {errors.name}
+                            </p>
+                          )}
                         </div>
                         <div className="space-y-2">
                           <label htmlFor="email" className="text-sm font-medium text-foreground">
@@ -196,9 +279,17 @@ const ContactSection = () => {
                             value={formState.email}
                             onChange={handleChange}
                             placeholder="your@email.com"
-                            required
-                            className="bg-muted/50 border-border focus:border-secondary"
+                            maxLength={255}
+                            className={`bg-muted/50 border-border focus:border-secondary ${errors.email ? 'border-destructive' : ''}`}
+                            aria-invalid={!!errors.email}
+                            aria-describedby={errors.email ? 'email-error' : undefined}
                           />
+                          {errors.email && (
+                            <p id="email-error" className="text-sm text-destructive flex items-center gap-1">
+                              <AlertCircle className="w-3 h-3" />
+                              {errors.email}
+                            </p>
+                          )}
                         </div>
                       </div>
 
@@ -213,8 +304,15 @@ const ContactSection = () => {
                             value={formState.company}
                             onChange={handleChange}
                             placeholder="Your organization"
-                            className="bg-muted/50 border-border focus:border-secondary"
+                            maxLength={150}
+                            className={`bg-muted/50 border-border focus:border-secondary ${errors.company ? 'border-destructive' : ''}`}
                           />
+                          {errors.company && (
+                            <p className="text-sm text-destructive flex items-center gap-1">
+                              <AlertCircle className="w-3 h-3" />
+                              {errors.company}
+                            </p>
+                          )}
                         </div>
                         <div className="space-y-2">
                           <label htmlFor="subject" className="text-sm font-medium text-foreground">
@@ -226,9 +324,17 @@ const ContactSection = () => {
                             value={formState.subject}
                             onChange={handleChange}
                             placeholder="How can we help?"
-                            required
-                            className="bg-muted/50 border-border focus:border-secondary"
+                            maxLength={200}
+                            className={`bg-muted/50 border-border focus:border-secondary ${errors.subject ? 'border-destructive' : ''}`}
+                            aria-invalid={!!errors.subject}
+                            aria-describedby={errors.subject ? 'subject-error' : undefined}
                           />
+                          {errors.subject && (
+                            <p id="subject-error" className="text-sm text-destructive flex items-center gap-1">
+                              <AlertCircle className="w-3 h-3" />
+                              {errors.subject}
+                            </p>
+                          )}
                         </div>
                       </div>
 
@@ -242,10 +348,21 @@ const ContactSection = () => {
                           value={formState.message}
                           onChange={handleChange}
                           placeholder="Tell us more about your inquiry..."
-                          required
+                          maxLength={2000}
                           rows={6}
-                          className="bg-muted/50 border-border focus:border-secondary resize-none"
+                          className={`bg-muted/50 border-border focus:border-secondary resize-none ${errors.message ? 'border-destructive' : ''}`}
+                          aria-invalid={!!errors.message}
+                          aria-describedby={errors.message ? 'message-error' : undefined}
                         />
+                        {errors.message && (
+                          <p id="message-error" className="text-sm text-destructive flex items-center gap-1">
+                            <AlertCircle className="w-3 h-3" />
+                            {errors.message}
+                          </p>
+                        )}
+                        <p className="text-xs text-muted-foreground text-right">
+                          {formState.message.length}/2000
+                        </p>
                       </div>
 
                       <motion.button
