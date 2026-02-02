@@ -1,41 +1,21 @@
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import ScrollProgress from '@/components/ScrollProgress';
 import AnimatedSection, { StaggerContainer, StaggerItem } from '@/components/AnimatedSection';
+import WhatsAppButton from '@/components/WhatsAppButton';
 import ceoImage from '@/assets/ceo-adams.jpg';
+import { Home } from 'lucide-react';
 
 const Leadership = () => {
-  const leaders = [
-    {
-      name: 'Dr. Adams Muhammed Bedemasi',
-      role: 'Chief Executive Officer',
-      image: ceoImage,
-      bio: 'Dr. Adams Muhammed Bedemasi is the visionary founder and CEO of Laylife Pharmaceutical Limited. With over 15 years of experience in pharmaceutical distribution and healthcare management, he has led the company to become one of Nigeria\'s most trusted pharmaceutical partners. His commitment to making quality healthcare accessible to every Nigerian community drives the company\'s mission and operations.',
-      quote: 'Our goal is simple: ensure every Nigerian has access to the medicines they need, when they need them.',
-    },
-    {
-      name: 'Pharm. Amina Yusuf',
-      role: 'Chief Operations Officer',
-      image: null,
-      bio: 'Pharm. Amina brings over 12 years of pharmaceutical operations experience, overseeing our nationwide distribution network across all 36 states and the FCT.',
-      quote: null,
-    },
-    {
-      name: 'Dr. Emeka Okonkwo',
-      role: 'Chief Medical Officer',
-      image: null,
-      bio: 'Dr. Emeka leads our medical affairs division, ensuring all products meet the highest standards of quality and efficacy for Nigerian patients.',
-      quote: null,
-    },
-    {
-      name: 'Mrs. Fatima Ibrahim',
-      role: 'Head of Regulatory Affairs',
-      image: null,
-      bio: 'Mrs. Fatima manages our relationships with NAFDAC and other regulatory bodies, ensuring full compliance with Nigerian pharmaceutical regulations.',
-      quote: null,
-    },
-  ];
+  const leader = {
+    name: 'Dr. Adams Muhammed Bedemasi',
+    role: 'Chief Executive Officer',
+    image: ceoImage,
+    bio: 'Dr. Adams Muhammed Bedemasi is the visionary founder and CEO of Laylife Pharmaceutical Limited. With over 15 years of experience in pharmaceutical distribution and healthcare management, he has led the company to become one of Nigeria\'s most trusted pharmaceutical partners. His commitment to making quality healthcare accessible to every Nigerian community drives the company\'s mission and operations.',
+    quote: 'Our goal is simple: ensure every Nigerian has access to the medicines they need, when they need them.',
+  };
 
   return (
     <div className="min-h-screen bg-background overflow-x-hidden">
@@ -108,68 +88,19 @@ const Leadership = () => {
 
               <AnimatedSection animation="fadeUp" delay={0.2}>
                 <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-                  {leaders[0].bio}
+                  {leader.bio}
                 </p>
               </AnimatedSection>
 
               <AnimatedSection animation="fadeUp" delay={0.3}>
                 <blockquote className="border-l-4 border-secondary pl-6 py-2">
                   <p className="text-xl font-light text-foreground italic">
-                    "{leaders[0].quote}"
+                    "{leader.quote}"
                   </p>
                 </blockquote>
               </AnimatedSection>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* Leadership Team */}
-      <section className="py-24 bg-muted/30">
-        <div className="container mx-auto px-6 lg:px-12">
-          <div className="text-center mb-16">
-            <AnimatedSection animation="fadeUp">
-              <span className="inline-block text-secondary font-medium tracking-wider uppercase text-sm mb-4">
-                Our Team
-              </span>
-            </AnimatedSection>
-            
-            <AnimatedSection animation="fadeUp" delay={0.1}>
-              <h2 className="text-foreground">
-                Executive Leadership
-              </h2>
-            </AnimatedSection>
-          </div>
-
-          <StaggerContainer className="grid md:grid-cols-3 gap-8" staggerDelay={0.15}>
-            {leaders.slice(1).map((leader) => (
-              <StaggerItem key={leader.name}>
-                <motion.div
-                  className="bg-background rounded-lg p-8 border border-border h-full"
-                  whileHover={{ y: -8 }}
-                >
-                  {/* Avatar placeholder */}
-                  <div className="w-24 h-24 bg-primary/10 rounded-full flex items-center justify-center mb-6 mx-auto">
-                    <span className="text-3xl font-light text-primary">
-                      {leader.name.split(' ').map(n => n[0]).join('')}
-                    </span>
-                  </div>
-                  
-                  <h3 className="text-xl font-medium text-foreground text-center mb-2">
-                    {leader.name}
-                  </h3>
-                  
-                  <p className="text-secondary text-center mb-4">
-                    {leader.role}
-                  </p>
-                  
-                  <p className="text-muted-foreground text-sm text-center leading-relaxed">
-                    {leader.bio}
-                  </p>
-                </motion.div>
-              </StaggerItem>
-            ))}
-          </StaggerContainer>
         </div>
       </section>
 
@@ -213,6 +144,7 @@ const Leadership = () => {
       </section>
 
       <Footer />
+      <WhatsAppButton />
     </div>
   );
 };

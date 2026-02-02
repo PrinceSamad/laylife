@@ -9,21 +9,19 @@ const Footer = () => {
 
   const footerLinks = {
     company: [
+      { label: 'Home', href: '/' },
       { label: 'About Us', href: '#about' },
-      { label: 'Leadership', href: '/leadership' },
+      { label: 'Leadership', href: '#leadership' },
       { label: 'Careers', href: '#careers' },
-      { label: 'News', href: '#research' },
-    ],
-    products: [
-      { label: 'Our Medicines', href: '/medicines' },
-      { label: 'Therapeutic Areas', href: '/medicines' },
-      { label: 'Research', href: '#research' },
-      { label: 'Quality Assurance', href: '#about' },
     ],
     resources: [
+      { label: 'News', href: '#research' },
       { label: 'Patient Support', href: '#contact' },
       { label: 'Healthcare Professionals', href: '#contact' },
       { label: 'Partner With Us', href: '#contact' },
+    ],
+    contact: [
+      { label: 'Get in Touch', href: '#contact' },
       { label: 'Media Center', href: '#research' },
     ],
   };
@@ -145,10 +143,20 @@ const Footer = () => {
                 Get the latest news and updates from Laylife.
               </p>
               
-              <form className="space-y-3">
+              <form 
+                className="space-y-3"
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  const form = e.target as HTMLFormElement;
+                  const email = (form.elements.namedItem('newsletter-email') as HTMLInputElement).value;
+                  window.location.href = `mailto:info@laylifepharma.com?subject=Newsletter Subscription&body=Please add me to your newsletter. My email: ${email}`;
+                }}
+              >
                 <input
                   type="email"
+                  name="newsletter-email"
                   placeholder="Your email"
+                  required
                   className="w-full px-4 py-3 bg-primary-foreground/10 border border-primary-foreground/20 rounded-md text-sm placeholder:text-primary-foreground/50 focus:outline-none focus:border-secondary transition-colors"
                 />
                 <motion.button

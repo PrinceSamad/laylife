@@ -19,13 +19,13 @@ const CareersSection = () => {
     {
       title: 'Regional Sales Director',
       department: 'Commercial',
-      location: 'Nairobi, Kenya',
+      location: 'Abuja, Nigeria',
       type: 'Full-time',
     },
     {
       title: 'Clinical Trial Coordinator',
       department: 'Medical Affairs',
-      location: 'Accra, Ghana',
+      location: 'Abuja, Nigeria',
       type: 'Full-time',
     },
   ];

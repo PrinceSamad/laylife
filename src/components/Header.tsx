@@ -11,9 +11,9 @@ const Header = () => {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
 
   const navItems = [
+    { label: 'Home', href: '/', hasDropdown: false, isRoute: true },
     { label: 'About Us', href: '#about', hasDropdown: false, isRoute: false },
-    { label: 'Our Medicines', href: '/medicines', hasDropdown: false, isRoute: true },
-    { label: 'Leadership', href: '/leadership', hasDropdown: false, isRoute: true },
+    { label: 'Leadership', href: '#leadership', hasDropdown: false, isRoute: false },
     { label: 'News', href: '#research', hasDropdown: false, isRoute: false },
     { label: 'Careers', href: '#careers', hasDropdown: false, isRoute: false },
     { label: 'Contact', href: '#contact', hasDropdown: false, isRoute: false },

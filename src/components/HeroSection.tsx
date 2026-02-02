@@ -131,12 +131,12 @@ const HeroSection = () => {
               </motion.a>
               
               <motion.a
-                href="#medicines"
+                href="#contact"
                 className="btn-secondary-hero"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
-                <span>Explore Our Medicines</span>
+                <span>Get in Touch</span>
               </motion.a>
             </motion.div>
           </div>
