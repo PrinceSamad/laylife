@@ -46,7 +46,7 @@ const ParallaxBanner = () => {
 
         <AnimatedSection animation="fadeUp" delay={0.2}>
           <div className="flex flex-col items-center gap-2">
-            <span className="text-primary-foreground font-medium">Dr. Amara Okonkwo</span>
+            <span className="text-primary-foreground font-medium">Dr. Adams Muhammed Bedemasi</span>
             <span className="text-primary-foreground/70 text-sm">CEO, Laylife Pharmaceutical</span>
           </div>
         </AnimatedSection>
