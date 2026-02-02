@@ -5,11 +5,13 @@ import MissionSection from '@/components/MissionSection';
 import ServicesSection from '@/components/ServicesSection';
 import ParallaxBanner from '@/components/ParallaxBanner';
 import ImpactSection from '@/components/ImpactSection';
+import LeadershipSection from '@/components/LeadershipSection';
 import TestimonialsSection from '@/components/TestimonialsSection';
 import NewsSection from '@/components/NewsSection';
 import CareersSection from '@/components/CareersSection';
 import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
+import WhatsAppButton from '@/components/WhatsAppButton';
 
 const Index = () => {
   return (
@@ -38,6 +40,9 @@ const Index = () => {
       {/* Impact Section */}
       <ImpactSection />
 
+      {/* Leadership Section - CEO Feature */}
+      <LeadershipSection />
+
       {/* Testimonials Section */}
       <TestimonialsSection />
       
@@ -52,6 +57,9 @@ const Index = () => {
       
       {/* Footer */}
       <Footer />
+
+      {/* WhatsApp Floating Button */}
+      <WhatsAppButton />
     </div>
   );
 };

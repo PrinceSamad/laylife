@@ -5,6 +5,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import ScrollProgress from '@/components/ScrollProgress';
 import AnimatedSection from '@/components/AnimatedSection';
+import WhatsAppButton from '@/components/WhatsAppButton';
 import labResearch from '@/assets/lab-research.jpg';
 import patientCare from '@/assets/patient-care.jpg';
 import manufacturing from '@/assets/manufacturing.jpg';
@@ -16,7 +17,7 @@ const newsArticles = {
     title: 'Laylife Partners with WHO for Nationwide Vaccine Distribution',
     excerpt: 'A landmark agreement to expand vaccine access across all 36 Nigerian states.',
     image: patientCare,
-    author: 'Dr. Amara Okonkwo',
+    author: 'Dr. Adams Muhammed Bedemasi',
     readTime: '5 min read',
     content: `
       <p class="lead">In a groundbreaking move that promises to reshape Nigeria's public health landscape, Laylife Pharmaceutical Limited has signed a comprehensive partnership agreement with the World Health Organization (WHO) to spearhead vaccine distribution across all 36 states and the Federal Capital Territory.</p>
@@ -268,6 +269,7 @@ const NewsDetail = () => {
       </section>
 
       <Footer />
+      <WhatsAppButton />
     </div>
   );
 };
