@@ -7,6 +7,9 @@ import Index from "./pages/Index";
 import NewsDetail from "./pages/NewsDetail";
 import Leadership from "./pages/Leadership";
 import OurStory from "./pages/OurStory";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import Terms from "./pages/Terms";
+import MedicalDisclaimer from "./pages/MedicalDisclaimer";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -22,6 +25,9 @@ const App = () => (
           <Route path="/news/:slug" element={<NewsDetail />} />
           <Route path="/leadership" element={<Leadership />} />
           <Route path="/story/:slug" element={<OurStory />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/terms" element={<Terms />} />
+          <Route path="/medical-disclaimer" element={<MedicalDisclaimer />} />
           
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
