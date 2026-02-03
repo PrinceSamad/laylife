@@ -19,8 +19,10 @@ const LeadershipSection = () => {
               >
                 <img
                   src={ceoImage}
-                  alt="Dr. Adams Muhammed Bedemasi - CEO of Laylife Pharmaceutical"
+                  alt="Dr. Adams Muhammed Bedemasi - CEO of Laylife Pharmaceutical Limited, leading healthcare innovation in Nigeria"
                   className="w-full h-full object-cover object-top"
+                  loading="lazy"
+                  decoding="async"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/40 via-transparent to-transparent" />
               </motion.div>

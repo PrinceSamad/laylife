@@ -194,10 +194,10 @@ const Footer = () => {
         <div className="container mx-auto px-6 lg:px-12 py-6">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-primary-foreground/60">
             <span>© {currentYear} Laylife Pharmaceutical Limited. All rights reserved.</span>
-            <div className="flex gap-6">
-              <a href="#" className="hover:text-primary-foreground transition-colors">Privacy Policy</a>
-              <a href="#" className="hover:text-primary-foreground transition-colors">Terms of Use</a>
-              <a href="#" className="hover:text-primary-foreground transition-colors">Cookie Settings</a>
+            <div className="flex flex-wrap justify-center gap-4 sm:gap-6">
+              <Link to="/privacy-policy" className="hover:text-primary-foreground transition-colors">Privacy Policy</Link>
+              <Link to="/terms" className="hover:text-primary-foreground transition-colors">Terms of Service</Link>
+              <Link to="/medical-disclaimer" className="hover:text-primary-foreground transition-colors">Medical Disclaimer</Link>
             </div>
           </div>
         </div>

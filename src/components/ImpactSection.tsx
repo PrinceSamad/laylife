@@ -71,8 +71,10 @@ const ImpactSection = () => {
                 <div className="relative aspect-[16/9] overflow-hidden">
                   <motion.img
                     src={impact.image}
-                    alt={impact.title}
+                    alt={`${impact.title} - Laylife Pharmaceutical impact in Nigerian healthcare`}
                     className="w-full h-full object-cover"
+                    loading="lazy"
+                    decoding="async"
                     whileHover={{ scale: 1.05 }}
                     transition={{ duration: 0.6 }}
                   />

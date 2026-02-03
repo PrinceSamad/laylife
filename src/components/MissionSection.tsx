@@ -94,8 +94,10 @@ const MissionSection = () => {
                 <div className="cinematic-image aspect-[4/5] lg:aspect-[3/4]">
                   <img
                     src={teamImage}
-                    alt="Laylife healthcare team"
+                    alt="Laylife Pharmaceutical healthcare team delivering quality medicines across Nigeria"
                     className="object-cover"
+                    loading="lazy"
+                    decoding="async"
                   />
                 </div>
                 
