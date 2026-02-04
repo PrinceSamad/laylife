@@ -19,7 +19,7 @@ const LeadershipSection = () => {
               >
                 <img
                   src={ceoImage}
-                  alt="Dr. Adams Muhammed Bedemasi - CEO of Laylife Pharmaceutical Limited, leading healthcare innovation in Nigeria"
+                  alt="Dr. Adam Muhammed Bedemasi - CEO of Laylife Pharmaceutical Limited, leading healthcare innovation in Nigeria"
                   className="w-full h-full object-cover object-top"
                   loading="lazy"
                   decoding="async"
@@ -43,7 +43,7 @@ const LeadershipSection = () => {
 
             <AnimatedSection animation="fadeUp" delay={0.1}>
               <h2 className="text-foreground mb-2">
-                Dr. Adams Muhammed Bedemasi
+                Dr. Adam Muhammed Bedemasi
               </h2>
             </AnimatedSection>
 
@@ -55,7 +55,7 @@ const LeadershipSection = () => {
 
             <AnimatedSection animation="fadeUp" delay={0.2}>
               <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                Dr. Adams Muhammed Bedemasi is the visionary founder and CEO of Laylife Pharmaceutical Limited. 
+                Dr. Adam Muhammed Bedemasi is the visionary founder and CEO of Laylife Pharmaceutical Limited. 
                 With over 15 years of experience in pharmaceutical distribution and healthcare management, 
                 he has led the company to become one of Nigeria's most trusted pharmaceutical partners.
               </p>

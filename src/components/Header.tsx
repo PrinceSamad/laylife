@@ -2,21 +2,23 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { useHeaderScroll } from '@/hooks/useScrollAnimation';
-import { Menu, X, Search, Globe, ChevronDown, Phone } from 'lucide-react';
+import { Menu, X, Search, ChevronDown, Phone } from 'lucide-react';
 import Logo from './Logo';
+import SearchModal from './SearchModal';
 
 const Header = () => {
   const { isScrolled } = useHeaderScroll();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
 
   const navItems = [
     { label: 'Home', href: '/', hasDropdown: false, isRoute: true },
-    { label: 'About Us', href: '#about', hasDropdown: false, isRoute: false },
-    { label: 'Leadership', href: '#leadership', hasDropdown: false, isRoute: false },
-    { label: 'News', href: '#research', hasDropdown: false, isRoute: false },
-    { label: 'Careers', href: '#careers', hasDropdown: false, isRoute: false },
-    { label: 'Contact', href: '#contact', hasDropdown: false, isRoute: false },
+    { label: 'About Us', href: '/#about', hasDropdown: false, isRoute: false },
+    { label: 'Leadership', href: '/leadership', hasDropdown: false, isRoute: true },
+    { label: 'News', href: '/news', hasDropdown: false, isRoute: true },
+    { label: 'Careers', href: '/careers', hasDropdown: false, isRoute: true },
+    { label: 'Contact', href: '/#contact', hasDropdown: false, isRoute: false },
   ];
 
   return (
@@ -122,6 +124,7 @@ const Header = () => {
               </motion.a>
 
               <button
+                onClick={() => setIsSearchOpen(true)}
                 className={`p-2 rounded-full transition-colors ${
                   isScrolled ? 'hover:bg-muted text-foreground' : 'hover:bg-white/10 text-primary-foreground'
                 }`}
@@ -142,6 +145,9 @@ const Header = () => {
           </div>
         </div>
       </motion.header>
+
+      {/* Search Modal */}
+      <SearchModal isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} />
 
       {/* Mobile Menu */}
       <AnimatePresence>
@@ -193,10 +199,25 @@ const Header = () => {
                 ))}
               </div>
 
+              {/* Mobile Search Button */}
+              <motion.button
+                onClick={() => {
+                  setIsMobileMenuOpen(false);
+                  setIsSearchOpen(true);
+                }}
+                className="flex items-center justify-center gap-2 w-full mt-6 py-4 bg-muted text-foreground rounded-lg font-medium"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.4 }}
+              >
+                <Search className="w-5 h-5" />
+                <span>Search</span>
+              </motion.button>
+
               {/* Mobile Phone CTA */}
               <motion.a
                 href="tel:+2348060350368"
-                className="flex items-center justify-center gap-2 mt-8 py-4 bg-secondary text-secondary-foreground rounded-lg font-medium"
+                className="flex items-center justify-center gap-2 mt-4 py-4 bg-secondary text-secondary-foreground rounded-lg font-medium"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.5 }}

@@ -41,7 +41,7 @@ const newsArticles = {
     title: 'Laylife Partners with WHO for Nationwide Vaccine Distribution',
     excerpt: 'A landmark agreement to expand vaccine access across all 36 Nigerian states.',
     image: patientCare,
-    author: 'Dr. Adams Muhammed Bedemasi',
+    author: 'Dr. Adam Muhammed Bedemasi',
     readTime: '5 min read',
     content: `
       <p class="lead">In a groundbreaking move that promises to reshape Nigeria's public health landscape, Laylife Pharmaceutical Limited has signed a comprehensive partnership agreement with the World Health Organization (WHO) to spearhead vaccine distribution across all 36 states and the Federal Capital Territory.</p>
@@ -120,7 +120,7 @@ const newsArticles = {
       <h3>Protecting Nigerian Patients</h3>
       <p>A crucial aspect of this partnership involves combating the proliferation of counterfeit and substandard medicines in the Nigerian market. Laylife has implemented advanced authentication technologies across its product range.</p>
       
-      <blockquote>"Every Nigerian deserves access to genuine, safe, and effective medicines. This partnership with NAFDAC ensures we maintain the highest standards of pharmaceutical practice." — Dr. Adams Muhammed Bedemasi, CEO</blockquote>
+      <blockquote>"Every Nigerian deserves access to genuine, safe, and effective medicines. This partnership with NAFDAC ensures we maintain the highest standards of pharmaceutical practice." — Dr. Adam Muhammed Bedemasi, CEO</blockquote>
       
       <h3>Looking Forward</h3>
       <p>Laylife remains committed to working closely with regulatory bodies to elevate pharmaceutical standards across Nigeria. Our investment in quality assurance represents our unwavering dedication to patient safety and healthcare excellence.</p>

@@ -10,10 +10,10 @@ import { Home } from 'lucide-react';
 
 const Leadership = () => {
   const leader = {
-    name: 'Dr. Adams Muhammed Bedemasi',
+    name: 'Dr. Adam Muhammed Bedemasi',
     role: 'Chief Executive Officer',
     image: ceoImage,
-    bio: 'Dr. Adams Muhammed Bedemasi is the visionary founder and CEO of Laylife Pharmaceutical Limited. With over 15 years of experience in pharmaceutical distribution and healthcare management, he has led the company to become one of Nigeria\'s most trusted pharmaceutical partners. His commitment to making quality healthcare accessible to every Nigerian community drives the company\'s mission and operations.',
+    bio: 'Dr. Adam Muhammed Bedemasi is the visionary founder and CEO of Laylife Pharmaceutical Limited. With over 15 years of experience in pharmaceutical distribution and healthcare management, he has led the company to become one of Nigeria\'s most trusted pharmaceutical partners. His commitment to making quality healthcare accessible to every Nigerian community drives the company\'s mission and operations.',
     quote: 'Our goal is simple: ensure every Nigerian has access to the medicines they need, when they need them.',
   };
 
@@ -57,7 +57,7 @@ const Leadership = () => {
                 <div className="cinematic-image aspect-[4/5] rounded-lg overflow-hidden">
                   <img
                     src={ceoImage}
-                    alt="Dr. Adams Muhammed Bedemasi"
+                    alt="Dr. Adam Muhammed Bedemasi"
                     className="w-full h-full object-cover object-top"
                   />
                 </div>
@@ -78,7 +78,7 @@ const Leadership = () => {
 
               <AnimatedSection animation="fadeUp" delay={0.1}>
                 <h2 className="text-foreground mb-2">
-                  Dr. Adams Muhammed Bedemasi
+                  Dr. Adam Muhammed Bedemasi
                 </h2>
               </AnimatedSection>
 
