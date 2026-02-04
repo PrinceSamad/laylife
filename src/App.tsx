@@ -3,10 +3,14 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import ScrollToTop from "./components/ScrollToTop";
 import Index from "./pages/Index";
 import NewsDetail from "./pages/NewsDetail";
+import News from "./pages/News";
 import Leadership from "./pages/Leadership";
 import OurStory from "./pages/OurStory";
+import Careers from "./pages/Careers";
+import Services from "./pages/Services";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import Terms from "./pages/Terms";
 import MedicalDisclaimer from "./pages/MedicalDisclaimer";
@@ -20,11 +24,15 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/news" element={<News />} />
           <Route path="/news/:slug" element={<NewsDetail />} />
           <Route path="/leadership" element={<Leadership />} />
           <Route path="/story/:slug" element={<OurStory />} />
+          <Route path="/careers" element={<Careers />} />
+          <Route path="/services/:slug" element={<Services />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms" element={<Terms />} />
           <Route path="/medical-disclaimer" element={<MedicalDisclaimer />} />

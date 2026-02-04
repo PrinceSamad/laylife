@@ -1,5 +1,6 @@
 import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import AnimatedSection from './AnimatedSection';
 import labImage from '@/assets/lab-research.jpg';
 import manufacturingImage from '@/assets/manufacturing.jpg';
@@ -15,12 +16,14 @@ const ServicesSection = () => {
 
   const services = [
     {
+      slug: 'manufacturing',
       title: 'Pharmaceutical Manufacturing',
       description: 'State-of-the-art facilities producing high-quality medicines meeting international standards.',
       image: manufacturingImage,
       stats: '50+ Manufacturing Lines',
     },
     {
+      slug: 'research',
       title: 'Research & Development',
       description: 'Pioneering drug discovery focused on diseases prevalent in African populations.',
       image: labImage,
@@ -89,16 +92,20 @@ const ServicesSection = () => {
                       {service.description}
                     </p>
                     
-                    <motion.a
-                      href="#"
+                    <Link
+                      to={`/services/${service.slug}`}
                       className="inline-flex items-center gap-2 text-secondary font-medium animated-underline"
-                      whileHover={{ x: 4 }}
                     >
-                      Learn more
-                      <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                        <path d="M5 12h14M12 5l7 7-7 7" />
-                      </svg>
-                    </motion.a>
+                      <motion.span
+                        className="inline-flex items-center gap-2"
+                        whileHover={{ x: 4 }}
+                      >
+                        Learn more
+                        <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                          <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                      </motion.span>
+                    </Link>
                   </div>
                 </div>
               </AnimatedSection>

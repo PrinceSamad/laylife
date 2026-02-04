@@ -48,14 +48,15 @@ const NewsSection = () => {
           </div>
 
           <AnimatedSection animation="fadeUp" delay={0.2}>
-            <motion.a
-              href="#"
-              className="inline-flex items-center gap-2 text-secondary font-medium"
-              whileHover={{ x: 4 }}
-            >
-              <span className="animated-underline">View all news</span>
-              <ArrowRight className="w-4 h-4" />
-            </motion.a>
+            <Link to="/news">
+              <motion.span
+                className="inline-flex items-center gap-2 text-secondary font-medium"
+                whileHover={{ x: 4 }}
+              >
+                <span className="animated-underline">View all news</span>
+                <ArrowRight className="w-4 h-4" />
+              </motion.span>
+            </Link>
           </AnimatedSection>
         </div>
 

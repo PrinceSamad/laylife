@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import AnimatedSection, { StaggerContainer, StaggerItem } from './AnimatedSection';
 import { Briefcase, MapPin, Clock, ArrowRight } from 'lucide-react';
 
@@ -81,14 +82,15 @@ const CareersSection = () => {
             </AnimatedSection>
 
             <AnimatedSection animation="fadeUp" delay={0.4}>
-              <motion.a
-                href="#"
-                className="inline-flex items-center gap-2 mt-8 text-secondary font-medium"
-                whileHover={{ x: 4 }}
-              >
-                <span className="animated-underline">View all positions</span>
-                <ArrowRight className="w-4 h-4" />
-              </motion.a>
+              <Link to="/careers">
+                <motion.span
+                  className="inline-flex items-center gap-2 mt-8 text-secondary font-medium"
+                  whileHover={{ x: 4 }}
+                >
+                  <span className="animated-underline">View all positions</span>
+                  <ArrowRight className="w-4 h-4" />
+                </motion.span>
+              </Link>
             </AnimatedSection>
           </div>
 
@@ -96,11 +98,11 @@ const CareersSection = () => {
           <StaggerContainer className="space-y-4" staggerDelay={0.1}>
             {positions.map((job) => (
               <StaggerItem key={job.title}>
-                <motion.a
-                  href="#"
-                  className="block bg-background p-6 rounded-lg border border-border card-interactive group"
-                  whileHover={{ x: 8 }}
-                >
+                <Link to="/careers#positions">
+                  <motion.div
+                    className="block bg-background p-6 rounded-lg border border-border card-interactive group"
+                    whileHover={{ x: 8 }}
+                  >
                   <div className="flex items-start justify-between gap-4">
                     <div className="flex-1">
                       <h4 className="text-lg font-medium text-foreground group-hover:text-primary transition-colors mb-2">
@@ -126,8 +128,9 @@ const CareersSection = () => {
                       <ArrowRight className="w-4 h-4 text-muted-foreground group-hover:text-secondary-foreground transition-colors" />
                     </div>
                   </div>
-                </motion.a>
-              </StaggerItem>
+                </motion.div>
+              </Link>
+            </StaggerItem>
             ))}
           </StaggerContainer>
         </div>
