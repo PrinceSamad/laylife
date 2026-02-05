@@ -9,20 +9,20 @@ const Footer = () => {
 
   const footerLinks = {
     company: [
-      { label: 'Home', href: '/' },
-      { label: 'About Us', href: '#about' },
-      { label: 'Leadership', href: '#leadership' },
-      { label: 'Careers', href: '#careers' },
+       { label: 'Home', href: '/', isRoute: true },
+       { label: 'About Us', href: '/about', isRoute: true },
+       { label: 'Leadership', href: '/leadership', isRoute: true },
+       { label: 'Careers', href: '/careers', isRoute: true },
     ],
     resources: [
-      { label: 'News', href: '#research' },
-      { label: 'Patient Support', href: '#contact' },
-      { label: 'Healthcare Professionals', href: '#contact' },
-      { label: 'Partner With Us', href: '#contact' },
+       { label: 'News', href: '/news', isRoute: true },
+       { label: 'Patient Support', href: '/contact', isRoute: true },
+       { label: 'Healthcare Professionals', href: '/contact', isRoute: true },
+       { label: 'Partner With Us', href: '/contact', isRoute: true },
     ],
     contact: [
-      { label: 'Get in Touch', href: '#contact' },
-      { label: 'Media Center', href: '#research' },
+       { label: 'Get in Touch', href: '/contact', isRoute: true },
+       { label: 'Media Center', href: '/news', isRoute: true },
     ],
   };
 
@@ -50,15 +50,13 @@ const Footer = () => {
                 </p>
               </div>
               
-              <motion.a
-                href="#contact"
+               <Link
+                 to="/contact"
                 className="inline-flex items-center gap-3 px-8 py-4 bg-secondary text-secondary-foreground rounded-md font-medium"
-                whileHover={{ scale: 1.02, x: 4 }}
-                whileTap={{ scale: 0.98 }}
               >
                 Get in Touch
                 <ArrowRight className="w-5 h-5" />
-              </motion.a>
+               </Link>
             </div>
           </div>
         </div>
@@ -117,13 +115,21 @@ const Footer = () => {
                     <ul className="space-y-3">
                       {links.map((link) => (
                         <li key={link.label}>
-                          <motion.a
-                            href={link.href}
-                            className="text-sm text-primary-foreground/70 hover:text-primary-foreground transition-colors animated-underline"
-                            whileHover={{ x: 2 }}
-                          >
-                            {link.label}
-                          </motion.a>
+                           {link.isRoute ? (
+                             <Link
+                               to={link.href}
+                               className="text-sm text-primary-foreground/70 hover:text-primary-foreground transition-colors animated-underline"
+                             >
+                               {link.label}
+                             </Link>
+                           ) : (
+                             <a
+                               href={link.href}
+                               className="text-sm text-primary-foreground/70 hover:text-primary-foreground transition-colors animated-underline"
+                             >
+                               {link.label}
+                             </a>
+                           )}
                         </li>
                       ))}
                     </ul>
