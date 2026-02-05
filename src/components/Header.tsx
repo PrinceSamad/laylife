@@ -14,11 +14,11 @@ const Header = () => {
 
   const navItems = [
     { label: 'Home', href: '/', hasDropdown: false, isRoute: true },
-    { label: 'About Us', href: '/#about', hasDropdown: false, isRoute: false },
+     { label: 'About Us', href: '/about', hasDropdown: false, isRoute: true },
     { label: 'Leadership', href: '/leadership', hasDropdown: false, isRoute: true },
     { label: 'News', href: '/news', hasDropdown: false, isRoute: true },
     { label: 'Careers', href: '/careers', hasDropdown: false, isRoute: true },
-    { label: 'Contact', href: '/#contact', hasDropdown: false, isRoute: false },
+     { label: 'Contact', href: '/contact', hasDropdown: false, isRoute: true },
   ];
 
   return (
