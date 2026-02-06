@@ -36,8 +36,7 @@ const MissionSection = () => {
 
             <AnimatedSection animation="fadeUp" delay={0.1}>
               <h2 className="text-foreground mb-8 text-balance">
-                Reimagining Healthcare
-                <span className="block text-primary">for Nigeria's Future</span>
+                Our Mission
               </h2>
             </AnimatedSection>
 
@@ -91,11 +90,11 @@ const MissionSection = () => {
           >
             <AnimatedSection animation="scale" delay={0.2}>
               <div className="relative">
-                <div className="cinematic-image aspect-[4/5] lg:aspect-[3/4]">
+                <div className="cinematic-image aspect-[4/5] lg:aspect-[3/4] w-full h-full">
                   <img
                     src={teamImage}
                     alt="Laylife Pharmaceutical healthcare team delivering quality medicines across Nigeria"
-                    className="object-cover"
+                    className="w-full h-full object-cover absolute inset-0"
                     loading="lazy"
                     decoding="async"
                   />
