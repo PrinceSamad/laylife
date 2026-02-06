@@ -192,11 +192,11 @@ const Services = () => {
             transition={{ delay: 0.2 }}
           >
             <Link
-              to="/#medicines"
+              to="/"
               className="inline-flex items-center gap-2 text-secondary hover:text-secondary/80 mb-8 transition-colors"
             >
               <ArrowLeft className="w-4 h-4" />
-              Back to Services
+              Back to Home
             </Link>
           </motion.div>
 
@@ -343,7 +343,7 @@ const Services = () => {
               Contact our team to learn how our {service.title.toLowerCase()} capabilities 
               can support your healthcare needs.
             </p>
-            <Link to="/#contact">
+            <Link to="/contact">
               <motion.span
                 className="inline-flex items-center gap-2 px-8 py-4 bg-secondary text-secondary-foreground rounded-lg font-medium"
                 whileHover={{ scale: 1.05 }}

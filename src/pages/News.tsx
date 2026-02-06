@@ -200,7 +200,7 @@ const News = () => {
                 Subscribe to receive the latest news, research updates, and 
                 announcements from Laylife Pharmaceutical.
               </p>
-              <Link to="/#contact">
+              <Link to="/contact">
                 <motion.span
                   className="inline-flex items-center gap-2 px-8 py-4 bg-secondary text-secondary-foreground rounded-lg font-medium"
                   whileHover={{ scale: 1.05 }}

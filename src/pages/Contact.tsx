@@ -110,11 +110,11 @@
        title: 'Phone',
        lines: ['+234 806 035 0368', 'Mon - Fri: 8am - 6pm WAT'],
      },
-     {
-       icon: Mail,
-       title: 'Email',
-       lines: ['info@laylifepharma.com', 'partnerships@laylifepharma.com'],
-     },
+    {
+      icon: Mail,
+      title: 'Email',
+      lines: ['info@laylifepharmaceutical.com'],
+    },
      {
        icon: Clock,
        title: 'Business Hours',

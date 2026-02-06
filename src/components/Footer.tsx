@@ -94,8 +94,8 @@ const Footer = () => {
                   </div>
                   <div className="flex items-center gap-3">
                     <Mail className="w-5 h-5 text-secondary flex-shrink-0" />
-                    <a href="mailto:info@laylifepharma.com" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">
-                      info@laylifepharma.com
+                    <a href="mailto:info@laylifepharmaceutical.com" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">
+                      info@laylifepharmaceutical.com
                     </a>
                   </div>
                 </div>
@@ -155,7 +155,7 @@ const Footer = () => {
                   e.preventDefault();
                   const form = e.target as HTMLFormElement;
                   const email = (form.elements.namedItem('newsletter-email') as HTMLInputElement).value;
-                  window.location.href = `mailto:info@laylifepharma.com?subject=Newsletter Subscription&body=Please add me to your newsletter. My email: ${email}`;
+                  window.location.href = `mailto:info@laylifepharmaceutical.com?subject=Newsletter Subscription&body=Please add me to your newsletter. My email: ${email}`;
                 }}
               >
                 <input

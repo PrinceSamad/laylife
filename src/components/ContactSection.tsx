@@ -126,7 +126,7 @@ const ContactSection = () => {
     {
       icon: Mail,
       title: 'Email',
-      lines: ['info@laylifepharma.com', 'partnerships@laylifepharma.com'],
+      lines: ['info@laylifepharmaceutical.com'],
     },
     {
       icon: Clock,

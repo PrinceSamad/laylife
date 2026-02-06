@@ -578,4 +578,29 @@
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
   }
+
+  /* Text justification for articles and content */
+  .text-justify {
+    text-align: justify;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+  }
+}
+
+/* Global text justification for paragraphs in content areas */
+article p,
+.prose p,
+section p:not(.text-center):not(.text-left):not(.text-right) {
+  text-align: justify;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+}
+
+/* Exclude specific elements from justification */
+.text-center p,
+.text-left p,
+.text-right p,
+blockquote p,
+.no-justify p {
+  text-align: inherit;
 }

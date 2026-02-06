@@ -178,7 +178,7 @@ const NewsDetail = () => {
             transition={{ delay: 0.2 }}
           >
             <Link
-              to="/#research"
+              to="/news"
               className="inline-flex items-center gap-2 text-secondary hover:text-secondary/80 mb-8 transition-colors"
             >
               <ArrowLeft className="w-4 h-4" />

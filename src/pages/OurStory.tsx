@@ -92,8 +92,8 @@ const OurStory = () => {
       <div className="min-h-screen bg-background flex items-center justify-center">
         <div className="text-center">
           <h1 className="text-4xl font-light text-foreground mb-4">Story Not Found</h1>
-          <Link to="/#impact" className="text-secondary hover:underline">
-            Return to Impact Section
+          <Link to="/" className="text-secondary hover:underline">
+            Return to Home
           </Link>
         </div>
       </div>
@@ -119,11 +119,11 @@ const OurStory = () => {
         <div className="relative z-10 container mx-auto px-6 lg:px-12">
           <AnimatedSection animation="fadeUp">
             <Link
-              to="/#impact"
+              to="/"
               className="inline-flex items-center gap-2 text-primary-foreground/80 hover:text-primary-foreground transition-colors mb-8"
             >
               <ArrowLeft className="w-4 h-4" />
-              Back to Impact
+              Back to Home
             </Link>
           </AnimatedSection>
 
@@ -214,7 +214,7 @@ const OurStory = () => {
               Want to Learn More About Our Impact?
             </h3>
             <div className="flex flex-wrap justify-center gap-4">
-              <Link to="/#contact">
+              <Link to="/contact">
                 <motion.button
                   className="px-8 py-3 bg-secondary text-secondary-foreground rounded-lg font-medium"
                   whileHover={{ scale: 1.05 }}
@@ -223,7 +223,7 @@ const OurStory = () => {
                   Get in Touch
                 </motion.button>
               </Link>
-              <Link to="/#impact">
+              <Link to="/">
                 <motion.button
                   className="px-8 py-3 border border-foreground/20 text-foreground rounded-lg font-medium"
                   whileHover={{ scale: 1.05 }}
