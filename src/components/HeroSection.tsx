@@ -94,7 +94,7 @@ const HeroSection = () => {
 
             {/* Subtitle with staggered reveal */}
             <motion.p
-              className="text-xl md:text-2xl text-primary-foreground/90 font-light max-w-xl mb-10 leading-relaxed"
+              className="text-xl md:text-2xl text-primary-foreground/90 font-light max-w-2xl mb-10 leading-relaxed"
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.9, ease: [0.16, 1, 0.3, 1] }}
