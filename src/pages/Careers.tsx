@@ -205,7 +205,7 @@ const Careers = () => {
                     </div>
                     
                     <motion.a
-                      href={`mailto:careers@laylifepharma.com?subject=Application for ${job.title}`}
+                      href={`mailto:info@laylifepharmaceutical.com?subject=Application for ${job.title}`}
                       className="inline-flex items-center gap-2 px-6 py-3 bg-secondary text-secondary-foreground rounded-lg font-medium whitespace-nowrap"
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
@@ -234,7 +234,7 @@ const Careers = () => {
                 keep you in mind for future opportunities.
               </p>
               <motion.a
-                href="mailto:careers@laylifepharma.com?subject=General Application"
+                href="mailto:info@laylifepharmaceutical.com?subject=General Application"
                 className="inline-flex items-center gap-2 px-8 py-4 bg-secondary text-secondary-foreground rounded-lg font-medium"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
