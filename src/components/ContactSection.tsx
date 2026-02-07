@@ -80,16 +80,16 @@ const ContactSection = () => {
     // Parse and sanitize the validated data
     const validatedData = contactFormSchema.parse(formState);
     
-    // TODO: Replace with actual backend API call
-    // When implementing backend:
-    // 1. Send validatedData to a server-side endpoint or edge function
-    // 2. Implement rate limiting on the server
-    // 3. Add CAPTCHA verification
-    // 4. Sanitize and validate again on server-side
-    // 5. Never trust client-side validation alone
+    // Build mailto link with form data
+    const companyLine = validatedData.company ? `\nCompany: ${validatedData.company}` : '';
+    const body = `Name: ${validatedData.name}\nEmail: ${validatedData.email}${companyLine}\n\n${validatedData.message}`;
     
-    // Simulate form submission (replace with actual API call)
-    await new Promise(resolve => setTimeout(resolve, 1500));
+    const mailtoLink = `mailto:info@laylifepharmaceutical.com?subject=${encodeURIComponent(validatedData.subject)}&body=${encodeURIComponent(body)}`;
+    
+    window.location.href = mailtoLink;
+    
+    // Short delay for UX feedback
+    await new Promise(resolve => setTimeout(resolve, 800));
     
     setIsSubmitting(false);
     setIsSubmitted(true);
