@@ -120,7 +120,7 @@ const HeroSection = () => {
               transition={{ duration: 0.8, delay: 1.3, ease: [0.16, 1, 0.3, 1] }}
             >
               <motion.a
-                href="#about"
+                href="/about"
                 className="btn-hero group"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
@@ -132,7 +132,7 @@ const HeroSection = () => {
               </motion.a>
               
               <motion.a
-                href="#contact"
+                href="/contact"
                 className="btn-secondary-hero"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
@@ -152,7 +152,7 @@ const HeroSection = () => {
         transition={{ delay: 2 }}
       >
         <motion.a
-          href="#about"
+          href="/about"
           className="flex flex-col items-center gap-2 text-primary-foreground/80 hover:text-primary-foreground transition-colors"
           animate={{ y: [0, 8, 0] }}
           transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}

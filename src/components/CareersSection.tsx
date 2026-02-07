@@ -98,7 +98,7 @@ const CareersSection = () => {
           <StaggerContainer className="space-y-4" staggerDelay={0.1}>
             {positions.map((job) => (
               <StaggerItem key={job.title}>
-                <Link to="/careers#positions">
+                <Link to="/careers">
                   <motion.div
                     className="block bg-background p-6 rounded-lg border border-border card-interactive group"
                     whileHover={{ x: 8 }}

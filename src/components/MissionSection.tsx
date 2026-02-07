@@ -85,16 +85,16 @@ const MissionSection = () => {
 
           {/* Image */}
           <motion.div
-            className="relative lg:absolute lg:right-0 lg:top-1/2 lg:-translate-y-1/2 lg:w-1/2"
+            className="relative"
             style={{ x: imageX }}
           >
             <AnimatedSection animation="scale" delay={0.2}>
               <div className="relative">
-                <div className="cinematic-image aspect-[4/5] lg:aspect-[3/4] w-full h-full">
+                <div className="cinematic-image aspect-[4/5] lg:aspect-[3/4] relative overflow-hidden">
                   <img
                     src={teamImage}
                     alt="Laylife Pharmaceutical healthcare team delivering quality medicines across Nigeria"
-                    className="w-full h-full object-cover absolute inset-0"
+                    className="absolute inset-0 w-full h-full object-cover"
                     loading="lazy"
                     decoding="async"
                   />
@@ -102,7 +102,7 @@ const MissionSection = () => {
                 
                 {/* Floating Card */}
                 <motion.div
-                  className="absolute -bottom-8 -left-8 bg-background p-6 rounded-lg shadow-xl max-w-xs"
+                  className="absolute -bottom-8 -left-8 bg-background p-6 rounded-lg shadow-xl max-w-xs z-10"
                   initial={{ opacity: 0, y: 40 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.6, duration: 0.8 }}
